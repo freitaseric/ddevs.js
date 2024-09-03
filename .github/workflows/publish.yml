@@ -25,25 +25,13 @@ jobs:
   publish:
     needs: [build]
     name: Publish to NPM Registry
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - name: Create release branch and bump version
-        env:
-          REF: ${{ github.ref }}
-        run: |
-          BRANCH=release/${REF:10}
-          git config --local user.email "freitaseric@users.noreply.github.com"
-          git config --local user.name "DDevs.js Publisher"
-          git checkout -b $BRANCH
-          git push -u origin $BRANCH
-          sed -i "s/  '  "version": "Canary",/  "version": "${REF:11}",/' package.json
-          git add package.json
-          git commit -m "New DDevs.js release inbound!"
-          git push
-
       - name: Remove unnecessary files 
-        run: | 
-          rm -rf node_modules test tsconfig.json src docs yarn.lock
+        run: rm -rf node_modules test tsconfig.json src docs bun.lockb
 
       - uses: actions/setup-node@v4
         with:
