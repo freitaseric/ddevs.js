@@ -2,18 +2,18 @@
   "compilerOptions": {
     "lib": ["Decorators", "ES2023"],
     "target": "ES2023",
+    "moduleResolution": "Node",
     "strict": true,
     "skipLibCheck": true,
     "declaration": true,
     "declarationDir": "dist/types",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "baseUrl": "./",
-    "rootDir": "src",
+    "rootDir": "./",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./tests/**/*"],
   "exclude": ["./node_module/**/*", "./**/*(.js|.mjs|.cjs)", "./dist/**/*"]
 }

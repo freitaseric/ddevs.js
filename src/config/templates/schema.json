@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gist.githubusercontent.com/freitaseric/2d0bf92dbda6b58dbfb79cb71e3bceb3/raw/3caa7446d66d524697e4f399be713ce564f4bbe1/ddevs-config.schema.json",
+  "title": "DDevs.js Configuration",
+  "description": "DDevs.js framework configuration file schema.",
+  "type": "object",
+  "properties": {
+    "file-version": {
+      "description": "The configuration file version.",
+      "type": "integer",
+      "default": 1
+    },
+    "auto-restart": {
+      "description": "Define if the application will be restarted when an error has ocurred.",
+      "type": ["boolean", "object"],
+      "default": true,
+      "properties": {
+        "client": {
+          "description": "Define if the discord client will be restarted when an error has ocurred.",
+          "type": "boolean",
+          "default": true
+        },
+        "logger": {
+          "description": "Define if the logger will be restarted when an error has ocurred.",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "client": {
+      "description": "The discord client configuration object.",
+      "type": "object",
+      "properties": {
+        "token": {
+          "description": "The discord bot token to connect to the discord api.",
+          "type": "string"
+        },
+        "intents": {
+          "description": "The intents the bot has access to.",
+          "type": ["string", "array"],
+          "items": { "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "logger": {
+      "description": "The Loggings configuration object.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "The title to display with the log message.",
+          "type": "string"
+        },
+        "strategy": {
+          "description": "The strategy of logs.",
+          "type": "string",
+          "pattern": "^(attached|standalone)$"
+        }
+      }
+    }
+  },
+  "required": ["file-version", "auto-restart", "client", "logger"]
+}

@@ -29,6 +29,9 @@
     "start": "bun ./tests/index.ts"
   },
   "dependencies": {
+    "discord.js": "^14.16.1",
+    "dotenv": "^16.4.5",
+    "json-schema-library": "^10.0.0-rc2",
     "loggings": "^1.5.0"
   }
 }

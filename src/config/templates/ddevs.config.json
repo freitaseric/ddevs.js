@@ -1,0 +1,13 @@
+{
+  "$schema": "./schema.json",
+  "file-version": 1,
+  "auto-restart": true,
+  "client": {
+    "token": "env:DISCORD_TOKEN",
+    "intents": ["Guild", "GuildMembers", "GuildMessages", "MessagesContent"]
+  },
+  "logger": {
+    "title": "project:name",
+    "strategy": "attached"
+  }
+}
