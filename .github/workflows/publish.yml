@@ -7,9 +7,12 @@ on:
       - "release"
 
 jobs:
-  build:
-    name: Bundle application
-    runs-on: ubuntu-22.04
+  publish:
+    name: Publish to NPM Registry
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
@@ -22,14 +25,7 @@ jobs:
 
       - name: Bundling package
         run: bun bundle
-  publish:
-    needs: [build]
-    name: Publish to NPM Registry
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
+      
       - name: Remove unnecessary files 
         run: rm -rf node_modules test tsconfig.json src docs bun.lockb biome.jsom .github .git .gitignore scripts
 
