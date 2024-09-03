@@ -19,9 +19,14 @@
     "framework",
     "discord"
   ],
-  "scripts": {},
+  "scripts": {
+    "bundle": "bun ./scripts/bundle.js",
+    "start": "bun ./tests/index.ts",
+    "test": "bun test ./tests/__specs__/index.spec.ts"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
+    "@types/bun": "^1.1.8",
     "@types/node": "^22.5.2"
   }
 }
