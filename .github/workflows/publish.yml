@@ -31,7 +31,9 @@ jobs:
       id-token: write
     steps:
       - name: Remove unnecessary files 
-        run: rm -rf node_modules test tsconfig.json src docs bun.lockb
+        run: rm -rf node_modules test tsconfig.json src docs bun.lockb biome.jsom .github .git .gitignore scripts
+
+      - run: ls -A
 
       - uses: actions/setup-node@v4
         with:
