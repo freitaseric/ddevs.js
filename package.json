@@ -1,32 +1,34 @@
 {
   "name": "ddevs.js",
   "version": "0.0.1",
-  "description": "A pretty and small javascript framework to build discord applications.",
-  "main": "dist/index.js",
-  "repository": "https://github.com/freitaseric/ddevs.js",
-  "license": "GPL-3.0-only",
-  "private": false,
   "author": {
     "name": "Eric Freitas",
     "email": "freitaseric@proton.me",
     "url": "https://github.com/freitaseric"
   },
+  "repository": "https://github.com/freitaseric/ddevs.js",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/bun": "^1.1.8",
+    "@types/node": "^22.5.2"
+  },
   "bugs": {
     "url": "https://github.com/freitaseric/ddevs.js/issues"
   },
+  "description": "A pretty and small javascript framework to build discord applications.",
   "keywords": [
     "javascript",
     "framework",
     "discord"
   ],
+  "license": "GPL-3.0-only",
+  "private": false,
   "scripts": {
     "bundle": "bun ./scripts/bundle.js",
-    "start": "bun ./tests/index.ts",
-    "test": "bun test ./tests/__specs__/index.spec.ts"
+    "start": "bun ./tests/index.ts"
   },
-  "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
-    "@types/bun": "^1.1.8",
-    "@types/node": "^22.5.2"
+  "dependencies": {
+    "loggings": "^1.5.0"
   }
 }
