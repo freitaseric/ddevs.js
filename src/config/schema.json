@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://gist.githubusercontent.com/freitaseric/2d0bf92dbda6b58dbfb79cb71e3bceb3/raw/3caa7446d66d524697e4f399be713ce564f4bbe1/ddevs-config.schema.json",
+  "$id": "https://gist.githubusercontent.com/freitaseric/2d0bf92dbda6b58dbfb79cb71e3bceb3/raw/eba8bdfa92844411d3833e3964eea48aa637388b/ddevsjs-config.schema.json",
   "title": "DDevs.js Configuration",
   "description": "DDevs.js framework configuration file schema.",
   "type": "object",
@@ -38,6 +38,7 @@
         "intents": {
           "description": "The intents the bot has access to.",
           "type": ["string", "array"],
+          "pattern": "(all|non_privileged|privileged)",
           "items": { "type": "string" },
           "minItems": 1,
           "uniqueItems": true

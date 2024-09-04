@@ -1,5 +1,5 @@
 {
-  "$schema": "./schema.json",
+  "$schema": "../schema.json",
   "file-version": 1,
   "auto-restart": true,
   "client": {

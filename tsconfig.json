@@ -2,6 +2,7 @@
   "compilerOptions": {
     "lib": ["Decorators", "ES2023"],
     "target": "ES2023",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
     "skipLibCheck": true,
@@ -9,6 +10,8 @@
     "declarationDir": "dist/types",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "rootDir": "./",
     "paths": {
       "@/*": ["./src/*"]
